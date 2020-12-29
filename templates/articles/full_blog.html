@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+.layout {
+    margin:0%;
+    padding:1.5em;
+    text-align: justify;
+}
+
+.responsive{
+    width:100%;
+    border:0;
+    height:auto;
+}
+
+.date {
+    text-align:right;
+    font-size:0.75em;
+    color:crimson;
+}
+
+</style>
+    <div class="layout">
+        <h2 style="text-align:center">{{detail.title|title}}</h2>
+        <p class="date">-{{detail.date|date:'M d Y'}}</p>
+        <img src="{{detail.image.url}}" alt="post_image" class="responsive">
+        <p>{{detail.body|safe}}</p>
+        <img src="{{detail.image2.url}}" alt="post_image" class="responsive">
+        <p>{{detail.para|safe}}</p>
+
+    </div>
+
+    
+
+{% endblock content %}
